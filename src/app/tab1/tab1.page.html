@@ -1,17 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-row class="ion-justify-content-start">
+      <ion-title size="large" style="padding-right: 0;">
+        Stockify
+      </ion-title>
+      <ion-buttons class="ion-align-self-center ion-padding">
+        <ion-icon (click)="addStock()" name="add-circle-outline" size="large"></ion-icon>
+      </ion-buttons>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-searchbar (ionChange)="filterData($event)"></ion-searchbar>
+
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Stock</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

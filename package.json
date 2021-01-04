@@ -1,8 +1,7 @@
 {
   "name": "stock_app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Tomas Centeno",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
