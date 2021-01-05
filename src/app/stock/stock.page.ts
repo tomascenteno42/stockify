@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { StockModalPage } from '../shared/stock-modal/stock-modal.page';
+import { StockModalPage } from '../shared/pages/stock-modal/stock-modal.page';
 
 type HTMLElementEvent<T extends HTMLElement> = Event & {
   target: T;
@@ -8,11 +8,11 @@ type HTMLElementEvent<T extends HTMLElement> = Event & {
 }
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-stock',
+  templateUrl: 'stock.page.html',
+  styleUrls: ['stock.page.scss']
 })
-export class Tab1Page {
+export class StockPage {
 
   constructor(public modalController: ModalController) { }
 

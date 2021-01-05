@@ -8,19 +8,27 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'stock',
+        loadChildren: () => import('../stock/stock.module').then(m => m.StockPageModule)
+      },
+      {
+        path: "expiration",
+        loadChildren: () => import("../expiration/expiration.module").then(m => m.ExpirationPageModule)
+      },
+      {
+        path: "sales",
+        loadChildren: () => import("../sales/sales.module").then(m => m.SalesPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/stock',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/stock',
     pathMatch: 'full'
   }
 ];

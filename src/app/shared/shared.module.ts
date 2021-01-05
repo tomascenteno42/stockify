@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { StockModalPage } from './pages/stock-modal/stock-modal.page';
 
 
-import { StockModalPage } from './stock-modal.page';
 
 @NgModule({
+  declarations: [HeaderComponent, StockModalPage],
   imports: [
     CommonModule,
     FormsModule,
@@ -15,6 +16,6 @@ import { StockModalPage } from './stock-modal.page';
     ReactiveFormsModule,
 
   ],
-  declarations: [StockModalPage]
+  exports: [HeaderComponent, StockModalPage]
 })
-export class StockModalPageModule { }
+export class SharedModule { }

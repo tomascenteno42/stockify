@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 
 @Component({
@@ -12,18 +12,7 @@ export class StockModalPage implements OnInit {
   ionicForm: FormGroup;
 
   constructor(private modalController: ModalController, public toastController: ToastController) {
-    this.ionicForm = new FormGroup({
-      name: new FormControl("", [
-        Validators.required,
-      ]),
-      quantity: new FormControl("", [
-        Validators.required,
-        Validators.minLength(1),
-      ]),
-      expiracyDate: new FormControl("", [
-        Validators.required,
-      ])
-    });
+    this.validateForm();
     this.minimumDate = new Date().toISOString();
   }
 
@@ -45,14 +34,19 @@ export class StockModalPage implements OnInit {
     });
     toast.present();
   }
-}
 
-// export function forbiddenNameValidator(date: number): ValidatorFn {
-//   return (control: AbstractControl): { [s: string]: boolean } => {
-//     var today = new Date();
-//     if (date < today.getDate()) {
-//       return { invalidDate: false };
-//     }
-//     return { invalidDate: true };
-//   };
-// }
+  validateForm() {
+    this.ionicForm = new FormGroup({
+      name: new FormControl("", [
+        Validators.required,
+      ]),
+      quantity: new FormControl("", [
+        Validators.required,
+        Validators.minLength(1),
+      ]),
+      expiracyDate: new FormControl("", [
+        Validators.required,
+      ])
+    });
+  }
+}
