@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController, NavParams, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-stock-modal',
@@ -11,19 +11,22 @@ export class StockModalPage implements OnInit {
   minimumDate: string;
   ionicForm: FormGroup;
 
-  constructor(private modalController: ModalController, public toastController: ToastController) {
+  constructor(private modalController: ModalController, public toastController: ToastController, private navParams: NavParams) {
     this.validateForm();
     this.minimumDate = new Date().toISOString();
   }
 
+
   ngOnInit() {
+    console.log(this.navParams.get("player"))
   }
 
-  dismiss() {
-    this.modalController.dismiss();
+  dismiss(data?: any) {
+    this.modalController.dismiss(data);
   }
 
   addProductToStock(event) {
+    this.dismiss(this.ionicForm.value);
     this.presentToast(this.ionicForm.value.name);
   }
 

@@ -7,12 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'expiration',
-    loadChildren: () => import('./expiration/expiration.module').then( m => m.ExpirationPageModule)
-  },
-  {
-    path: 'sales',
-    loadChildren: () => import('./sales/sales.module').then( m => m.SalesPageModule)
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
   }
 ];
 @NgModule({
