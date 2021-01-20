@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { StockModalPage } from './pages/stock-modal/stock-modal.page';
+import { BarcodeFormModalComponent } from './pages/barcode-form-modal/barcode-form-modal.component';
+import { StockItemComponent } from './components/stock-item/stock-item.component';
+import { StockFormModalPage } from './pages/stock-form-modal/stock-form-modal.page';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, StockModalPage],
+  declarations: [HeaderComponent, StockItemComponent, StockFormModalPage, BarcodeFormModalComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -16,6 +18,9 @@ import { StockModalPage } from './pages/stock-modal/stock-modal.page';
     ReactiveFormsModule,
 
   ],
-  exports: [HeaderComponent, StockModalPage]
+  exports: [CommonModule,
+    FormsModule,
+    IonicModule,
+    ReactiveFormsModule, HeaderComponent, StockItemComponent, StockFormModalPage, BarcodeFormModalComponent]
 })
 export class SharedModule { }

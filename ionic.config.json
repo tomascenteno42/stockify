@@ -1,5 +1,5 @@
 {
-  "name": "stock_app",
+  "name": "Stockify",
   "integrations": {
     "capacitor": {}
   },

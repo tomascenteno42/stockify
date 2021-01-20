@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="addProductToStock()">
+    <ion-item lines="full">
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input type="text" formControlName="name" disabled="true">{{ product.name }}</ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Quantity</ion-label>
+      <ion-input type="number" formControlName="quantity"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Expiration date</ion-label>
+      <ion-datetime min={{minimumDate}} formControlName="expiresAt"></ion-datetime>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" [disabled]="!ionicForm.valid">Add product</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

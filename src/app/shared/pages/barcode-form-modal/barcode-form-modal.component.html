@@ -18,13 +18,28 @@
     </ion-item>
 
     <ion-item lines="full">
+      <ion-label position="floating">Box size</ion-label>
+      <ion-input type="number" formControlName="boxSize"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Price</ion-label>
+      <ion-input type="number" formControlName="price"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="stacked">Barcode</ion-label>
+      <ion-input type="text" formControlName="price" disabled="true">{{ barcode }}</ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
       <ion-label position="floating">Quantity</ion-label>
       <ion-input type="number" formControlName="quantity"></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Expiration date</ion-label>
-      <ion-datetime min={{minimumDate}} formControlName="expiracyDate"></ion-datetime>
+      <ion-datetime min={{minimumDate}} formControlName="expiresAt"></ion-datetime>
     </ion-item>
 
     <ion-row>

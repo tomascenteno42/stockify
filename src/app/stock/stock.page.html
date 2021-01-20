@@ -1,14 +1,28 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar (ionChange)="filterData($event)"></ion-searchbar>
-
-  <ion-button [routerLink]="['/test']">go</ion-button>
-
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-margin">
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-margin">
     <ion-fab-button (click)="addStock()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
+  </ion-fab> -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-margin">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button>
+        <ion-icon name="file-tray-stacked-outline">
+        </ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="addStockWithScan()">
+        <ion-icon name="scan-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
   </ion-fab>
+
+  <ion-list>
+    <app-stock-item *ngFor="let item of stock" [stockItem]="item"></app-stock-item>
+  </ion-list>
 
 </ion-content>

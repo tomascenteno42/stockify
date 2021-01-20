@@ -1,5 +1,10 @@
 <app-header></app-header>
 
 <ion-content>
-
+    <ion-list>
+        <ion-list-header>
+            Products expiring this month.
+        </ion-list-header>
+        <app-stock-item *ngFor="let item of expirationProducts" [stockItem]="item"></app-stock-item>
+    </ion-list>
 </ion-content>
